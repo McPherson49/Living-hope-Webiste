@@ -1,0 +1,198 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* Brand — ocean blue: calm, clinical-clean and trustworthy */
+  --color-brand-50: #f0f7ff;
+  --color-brand-100: #dfeeff;
+  --color-brand-200: #bedcfc;
+  --color-brand-300: #8ec3f9;
+  --color-brand-400: #57a2f2;
+  --color-brand-500: #2c86e8;
+  --color-brand-600: #1c66c4;
+  --color-brand-700: #1a54a6;
+  --color-brand-800: #19447f;
+  --color-brand-900: #142f5c;
+  --color-brand-950: #0a1d3d;
+
+  /* Accent — aqua/cyan: highlights, glows and CTAs on dark backgrounds */
+  --color-accent-50: #ecfdff;
+  --color-accent-100: #cef8fd;
+  --color-accent-200: #a2eefa;
+  --color-accent-300: #5fe0f3;
+  --color-accent-400: #22c8e6;
+  --color-accent-500: #0aa9c9;
+  --color-accent-600: #0888a6;
+  --color-accent-700: #0a6d85;
+
+  --color-ink: #0d2038;
+  --color-muted: #465a72;
+  --color-line: #d9e5f1;
+  --color-mist: #f4f8fc;
+
+  /* Emergency red — kept high-contrast (white text passes AA) */
+  --color-emergency: #b91c1c;
+  --color-emergency-dark: #991b1b;
+  --color-whatsapp: #128c4a;
+  --color-whatsapp-dark: #0e7440;
+
+  /* Soft, blue-tinted elevation */
+  --shadow-card:
+    0 1px 2px rgb(13 32 56 / 0.04), 0 10px 30px -12px rgb(13 32 56 / 0.14);
+  --shadow-lift:
+    0 2px 4px rgb(13 32 56 / 0.05), 0 24px 48px -18px rgb(28 102 196 / 0.32);
+
+  --animate-page-in: page-in 0.45s ease-out both;
+  --animate-pulse-soft: pulse-soft 2.6s ease-out infinite;
+
+  @keyframes page-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* For wide pill-shaped elements, where a 2x uniform scale would look like a blob */
+  @keyframes pulse-soft {
+    0% {
+      transform: scale(1);
+      opacity: 0.5;
+    }
+    70%,
+    100% {
+      transform: scale(1.14, 1.32);
+      opacity: 0;
+    }
+  }
+}
+
+@theme inline {
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    color-scheme: light;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background: #fff;
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-accent-500);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: var(--color-accent-200);
+    color: var(--color-brand-950);
+  }
+}
+
+/*
+ * Placeholder highlighting. Any [bracketed] text that still needs to be
+ * confirmed by the hospital is rendered with this class so it can't be missed
+ * (and so `npm run placeholders` can list it). Deliberately NOT part of the
+ * brand palette — it has to stand out.
+ */
+.ph {
+  background: #fff1b8;
+  color: #6b4200;
+  border-radius: 0.25rem;
+  padding: 0 0.3em;
+  outline: 1px dashed #d99a00;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  font-style: normal;
+  font-weight: 500;
+}
+
+/*
+ * Above-the-fold entrance. Plain CSS (not JS) on purpose: hero text is the
+ * page's LCP element, so it must paint immediately and never wait for
+ * hydration. `--i` staggers siblings.
+ */
+.rise {
+  animation: rise 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--i, 0) * 90ms);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise,
+  .animate-page-in {
+    animation: none;
+  }
+}
+
+/*
+ * Soft pale-blue wash for hero sections. A single quiet radial gradient —
+ * replaces the old dark, multi-layer animated backdrop. Almost still, so it
+ * reads as premium rather than busy.
+ */
+.hero-wash {
+  background:
+    radial-gradient(50rem 30rem at 88% -10%, rgb(94 224 243 / 0.16), transparent 60%),
+    radial-gradient(46rem 30rem at 8% 0%, rgb(44 134 232 / 0.1), transparent 60%),
+    #fff;
+}
+
+/* Animated underline for footer / text links */
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0 1.5px;
+  transition: background-size 0.3s ease;
+}
+.link-underline:hover,
+.link-underline:focus-visible {
+  background-size: 100% 1.5px;
+}
+
+/* Blog / long-form content */
+.article {
+  --tw-prose-body: var(--color-ink);
+  --tw-prose-headings: var(--color-brand-900);
+  --tw-prose-links: var(--color-brand-700);
+  --tw-prose-bold: var(--color-ink);
+  --tw-prose-bullets: var(--color-brand-500);
+  --tw-prose-counters: var(--color-brand-600);
+  --tw-prose-hr: var(--color-line);
+  --tw-prose-quotes: var(--color-brand-900);
+  --tw-prose-quote-borders: var(--color-accent-400);
+}
