@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { CalendarCheck, Check, Phone } from "lucide-react";
+import { Check, Phone } from "lucide-react"; // + CalendarCheck when the Book button is restored
 import { doctors } from "@/content/doctors";
 import { getService, services } from "@/content/services";
 import { site } from "@/content/site";
 import { PostCard } from "@/components/blog/PostCard";
 import { DoctorCard } from "@/components/doctors/DoctorCard";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
-import { BookCard } from "@/components/ui/BookCard";
+// import { BookCard } from "@/components/ui/BookCard"; // restore with the Book panel in the sidebar
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Copy } from "@/components/ui/Copy";
@@ -66,12 +66,15 @@ export default async function ServicePage({
           { name: service.name, path: `/services/${service.slug}` },
         ]}
       >
-        {isEmergency ? (
+        {isEmergency && (
           <ButtonLink href={telHref(site.contact.emergencyPhone)} variant="emergency" size="lg">
             <Phone className="h-5 w-5" aria-hidden="true" />
             Call Emergency Line
           </ButtonLink>
-        ) : (
+        )}
+        {/* "Book this service" hidden for now (it was the non-emergency alternative to the button above).
+            To restore, put this back as the `else` branch of `isEmergency ? … : …`, and set the Call
+            button below back to variant="outline":
           <ButtonLink
             href={`/book-appointment?department=${service.slug}`}
             variant="primary"
@@ -80,8 +83,12 @@ export default async function ServicePage({
             <CalendarCheck className="h-5 w-5" aria-hidden="true" />
             Book this service
           </ButtonLink>
-        )}
-        <ButtonLink href={telHref(site.contact.phone)} variant="outline" size="lg">
+        */}
+        <ButtonLink
+          href={telHref(site.contact.phone)}
+          variant={isEmergency ? "outline" : "primary"}
+          size="lg"
+        >
           <Phone className="h-5 w-5" aria-hidden="true" />
           <span>
             Call <Copy>{site.contact.phone}</Copy>
@@ -172,6 +179,8 @@ export default async function ServicePage({
         </div>
 
         <aside className="space-y-6 lg:sticky lg:top-28 lg:self-start">
+          {/* "Book this service" / "Book a follow-up" panel hidden for now. To restore, uncomment this
+              and the BookCard + CalendarCheck imports.
           <Reveal x={30} y={0}>
             <BookCard
               title={isEmergency ? "Book a follow-up" : "Book this service"}
@@ -179,6 +188,7 @@ export default async function ServicePage({
               message={`Hello Living Hope Hospital, I would like to book an appointment for ${service.name}.`}
             />
           </Reveal>
+          */}
           <nav
             aria-label="Other services"
             className="rounded-3xl border border-line bg-white p-6 shadow-card"

@@ -12,7 +12,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["/about", 0.7, "yearly"],
     ["/doctors", 0.8, "monthly"],
     ["/services", 0.9, "monthly"],
-    ["/book-appointment", 0.9, "yearly"],
+    // Booking is hidden site-wide for now, so the page is kept out of the sitemap. Restore with the page's links.
+    // ["/book-appointment", 0.9, "yearly"],
     ["/insurance-hmo", 0.6, "monthly"],
     ["/visiting-hours", 0.5, "yearly"],
     ["/faqs", 0.6, "monthly"],

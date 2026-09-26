@@ -44,7 +44,8 @@ export const homeContent = {
     {
       icon: "booking",
       title: "Simple appointment booking",
-      text: "By phone, WhatsApp, or online form.",
+      // Was "By phone, WhatsApp, or online form." — the online form is hidden for now.
+      text: "By phone or WhatsApp.",
     },
   ] satisfies WhyPoint[],
 
@@ -55,7 +56,8 @@ export const homeContent = {
   visitSteps: [
     {
       title: "Book",
-      text: "Call, message us on WhatsApp or use the online form. We confirm your slot promptly.",
+      // Was "Call, message us on WhatsApp or use the online form. …" — the online form is hidden for now.
+      text: "Call or message us on WhatsApp. We confirm your slot promptly.",
     },
     {
       title: "Arrive & register",

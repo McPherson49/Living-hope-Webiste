@@ -61,6 +61,8 @@ Do not wait for contractions to become regular if:
 
 ## Support at every step
 
-From your first antenatal visit to delivery and beyond, our maternity team supports women through every stage of pregnancy. Learn more about our [maternity and gynaecology care](/services/maternity-gynaecology), or [book an antenatal appointment](/book-appointment?department=maternity-gynaecology) so we can help you plan.
+From your first antenatal visit to delivery and beyond, our maternity team supports women through every stage of pregnancy. Learn more about our [maternity and gynaecology care](/services/maternity-gynaecology), or [contact us](/contact) so we can help you plan.
+
+<!-- Booking is hidden for now. Original sentence, to restore: From your first antenatal visit to delivery and beyond, our maternity team supports women through every stage of pregnancy. Learn more about our [maternity and gynaecology care](/services/maternity-gynaecology), or [book an antenatal appointment](/book-appointment?department=maternity-gynaecology) so we can help you plan. -->
 
 If you think you may be in labour, please call us or come in — we would rather see you and reassure you than have you wait at home.

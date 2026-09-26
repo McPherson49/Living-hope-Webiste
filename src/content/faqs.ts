@@ -39,11 +39,12 @@ export const generalFaqs: Faq[] = [
     answer:
       "Yes. Call our emergency line and our team will guide you and help arrange ambulance support. Availability can vary, so please call ahead whenever you can.",
   },
-  {
-    question: "How do I book an appointment?",
-    answer:
-      "By phone, WhatsApp, or our online booking form — see our Book an Appointment page.",
-  },
+  // Hidden for now along with the rest of the booking content. To restore, uncomment it.
+  // {
+  //   question: "How do I book an appointment?",
+  //   answer:
+  //     "By phone, WhatsApp, or our online booking form — see our Book an Appointment page.",
+  // },
   {
     question: "Is Living Hope Hospital registered/licensed?",
     answer: "[Insert MDCN/state Ministry of Health registration details.]",

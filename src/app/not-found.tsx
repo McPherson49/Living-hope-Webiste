@@ -27,9 +27,11 @@ export default function NotFound() {
           <ButtonLink href="/" variant="primary" size="lg">
             Back to home
           </ButtonLink>
+          {/* "Book an appointment" hidden for now. To restore, uncomment this.
           <ButtonLink href="/book-appointment" variant="outline" size="lg">
             Book an appointment
           </ButtonLink>
+          */}
         </div>
         <ul className="mt-12 flex flex-wrap justify-center gap-2 text-sm">
           {serviceLinks.map((s) => (

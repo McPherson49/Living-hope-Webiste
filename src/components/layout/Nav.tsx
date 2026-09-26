@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { AnimatePresence, m, type Variants } from "framer-motion";
-import { CalendarCheck, ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react"; // + CalendarCheck when the mobile Book link is restored
 import type { NavItem } from "@/content/navigation";
 import { buttonClass } from "@/components/ui/Button";
 import { WhatsAppIcon } from "@/components/ui/Icons";
@@ -41,7 +41,7 @@ export function DesktopNav({ items }: { items: NavItem[] }) {
           return (
             <li
               key={item.href}
-              className="group relative"
+              className="group/item relative"
               onMouseEnter={() => setHovered(item.href)}
               onFocus={() => setHovered(item.href)}
               onBlur={() => setHovered(null)}
@@ -65,13 +65,13 @@ export function DesktopNav({ items }: { items: NavItem[] }) {
                 {item.label}
                 {item.children && (
                   <ChevronDown
-                    className="h-4 w-4 opacity-60 transition-transform group-focus-within:rotate-180 group-hover:rotate-180"
+                    className="h-4 w-4 opacity-60 transition-transform group-focus-within/item:rotate-180 group-hover/item:rotate-180"
                     aria-hidden="true"
                   />
                 )}
               </Link>
               {item.children && (
-                <div className="invisible absolute left-0 top-full z-50 w-72 translate-y-1 pt-2 opacity-0 transition duration-200 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                <div className="invisible absolute left-0 top-full z-50 w-72 translate-y-1 pt-2 opacity-0 transition duration-200 group-focus-within/item:visible group-focus-within/item:translate-y-0 group-focus-within/item:opacity-100 group-hover/item:visible group-hover/item:translate-y-0 group-hover/item:opacity-100">
                   <ul className="rounded-2xl border border-line bg-white p-2 shadow-lift">
                     {item.children.map((child) => (
                       <li key={child.href}>
@@ -228,7 +228,10 @@ export function MobileNav({
                 )}
               </m.ul>
 
-              <div className="mt-4 grid gap-2 border-t border-line pt-4 sm:grid-cols-2">
+              {/* Single column while the Book button is hidden; add `sm:grid-cols-2` back when restoring it. */}
+              <div className="mt-4 grid gap-2 border-t border-line pt-4">
+                {/* Hidden for now (the /book-appointment page still exists). To restore, uncomment this
+                    link and the CalendarCheck import above.
                 <Link
                   href="/book-appointment"
                   onClick={close}
@@ -237,6 +240,7 @@ export function MobileNav({
                   <CalendarCheck className="h-5 w-5" aria-hidden="true" />
                   Book an Appointment
                 </Link>
+                */}
                 <a
                   href={whatsappHref}
                   onClick={close}

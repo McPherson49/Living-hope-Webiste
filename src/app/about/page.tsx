@@ -1,6 +1,6 @@
 import {
   Bed,
-  CalendarCheck,
+  // CalendarCheck, // restore with the "Book an Appointment" band at the bottom
   FlaskConical,
   Heart,
   HandHeart,
@@ -225,6 +225,8 @@ export default function AboutPage() {
         </div>
       </Section>
 
+      {/* "Ready to experience care that feels personal? — Book an Appointment" band hidden for now.
+          To restore, uncomment this and the CalendarCheck import above.
       <section className="bg-brand-50 py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal className="flex flex-col items-start gap-5 md:flex-row md:items-center md:justify-between">
@@ -238,6 +240,7 @@ export default function AboutPage() {
           </Reveal>
         </div>
       </section>
+      */}
 
       <EmergencyBand />
     </>

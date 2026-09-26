@@ -21,8 +21,9 @@ export const siteUrl = (
 export const site = {
   name: "Living Hope Hospital",
   tagline: "Compassionate, Quality Healthcare in Parakin, Ile-Ife",
+  // Trailing " Book your appointment today." removed while booking is hidden.
   description:
-    "Compassionate, quality healthcare in Parakin, Ile-Ife. Emergency, maternity, pediatric & general care. Book your appointment today.",
+    "Compassionate, quality healthcare in Parakin, Ile-Ife. Emergency, maternity, pediatric & general care.",
   url: siteUrl,
 
   /** Set to false once every sample value in src/content/ has been replaced with real details. */
@@ -43,11 +44,15 @@ export const site = {
   },
 
   map: {
-    /** Area-level pin for Parakin. Replace with the exact pin from Google Maps → Share → Embed a map. */
+    /**
+     * Searches Google Maps for the hospital by name so it resolves to its real listing in Parakin
+     * (public directories place it in the Obalufe Layout, Eleyele). Once the hospital confirms its
+     * exact pin, replace with Google Maps → Share → Embed a map / Copy link.
+     */
     embedUrl:
-      "https://www.google.com/maps?q=Parakin,+Ile-Ife,+Osun+State,+Nigeria&output=embed",
+      "https://www.google.com/maps?q=Living+Hope+Hospital,+Parakin,+Ile-Ife,+Osun+State,+Nigeria&output=embed",
     directionsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Parakin%2C+Ile-Ife%2C+Osun+State%2C+Nigeria",
+      "https://www.google.com/maps/search/?api=1&query=Living+Hope+Hospital%2C+Parakin%2C+Ile-Ife%2C+Osun+State%2C+Nigeria",
     /** e.g. { lat: 7.5, lng: 4.5 } — used in structured data once set. */
     geo: undefined as { lat: number; lng: number } | undefined,
   },

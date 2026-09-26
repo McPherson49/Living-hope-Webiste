@@ -71,4 +71,6 @@ Typhoid vaccines are also available. Ask your doctor whether vaccination is reco
 
 ## When to see a doctor
 
-See a doctor if a fever lasts more than a day or two, or straight away if there are any of the warning signs above. Our [general and family medicine](/services/general-family-medicine) team is here to help — you can [book an appointment](/book-appointment) or call us.
+See a doctor if a fever lasts more than a day or two, or straight away if there are any of the warning signs above. Our [general and family medicine](/services/general-family-medicine) team is here to help — call us any time.
+
+<!-- Booking is hidden for now. Original sentence, to restore: See a doctor if a fever lasts more than a day or two, or straight away if there are any of the warning signs above. Our [general and family medicine](/services/general-family-medicine) team is here to help — you can [book an appointment](/book-appointment) or call us. -->

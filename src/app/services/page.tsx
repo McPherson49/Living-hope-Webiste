@@ -1,6 +1,6 @@
-import { CalendarCheck } from "lucide-react";
+// import { CalendarCheck } from "lucide-react"; // restore with the Book button
 import { ServicesGrid } from "@/components/home/ServicesGrid";
-import { ButtonLink } from "@/components/ui/Button";
+// import { ButtonLink } from "@/components/ui/Button"; // restore with the Book button
 import { EmergencyBand } from "@/components/ui/EmergencyBand";
 import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
@@ -22,10 +22,12 @@ export default function ServicesPage() {
         description="From emergencies to everyday family health, every department is here in Parakin — with direct access between our doctors, laboratory, imaging, surgical unit and pharmacy."
         breadcrumbs={[{ name: "Services", path: "/services" }]}
       >
+        {/* "Book an Appointment" hidden for now. To restore, uncomment this and the two imports above.
         <ButtonLink href="/book-appointment" variant="primary" size="lg">
           <CalendarCheck className="h-5 w-5" aria-hidden="true" />
           Book an Appointment
         </ButtonLink>
+        */}
       </PageHero>
 
       <Section tone="white">

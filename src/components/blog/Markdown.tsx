@@ -20,7 +20,9 @@ const components: Components = {
 export function Markdown({ children }: { children: string }) {
   return (
     <div className="prose prose-lg article max-w-none prose-headings:font-display prose-headings:font-semibold prose-a:font-semibold prose-a:underline-offset-2 prose-li:marker:text-brand-500">
-      <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
+      {/* skipHtml: drop raw HTML (react-markdown would otherwise print it as literal text). This is what
+          lets a post keep a `<!-- … -->` note, e.g. the original wording of a hidden booking sentence. */}
+      <ReactMarkdown remarkPlugins={[remarkGfm]} components={components} skipHtml>
         {children}
       </ReactMarkdown>
     </div>

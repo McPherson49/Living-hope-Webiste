@@ -65,4 +65,6 @@ Ask neighbours, colleagues and friends about their experiences, and read reviews
 
 ## Visit before you need us
 
-Save our number, know the route, and keep your ID and any medical records together in one place. If you would like to meet the team or ask questions first, you can [book an appointment](/book-appointment) or [contact us](/contact) — we would be glad to hear from you.
+Save our number, know the route, and keep your ID and any medical records together in one place. If you would like to meet the team or ask questions first, you can [contact us](/contact) — we would be glad to hear from you.
+
+<!-- Booking is hidden for now. Original sentence, to restore: Save our number, know the route, and keep your ID and any medical records together in one place. If you would like to meet the team or ask questions first, you can [book an appointment](/book-appointment) or [contact us](/contact) — we would be glad to hear from you. -->

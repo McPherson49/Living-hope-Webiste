@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CalendarCheck, Clock, MapPin, Phone, Siren } from "lucide-react";
+import { Clock, MapPin, Phone, Siren } from "lucide-react"; // + CalendarCheck when the Book button is restored
 import { primaryNav } from "@/content/navigation";
 import { site } from "@/content/site";
 import { ButtonLink } from "@/components/ui/Button";
@@ -56,7 +56,7 @@ export function Header() {
       </div>
 
       <StickyHeader>
-        <Container className="flex h-16 items-center justify-between gap-3 transition-[height] duration-300 lg:h-20 lg:group-data-[scrolled=true]:h-16">
+        <Container className="flex h-16 items-center justify-between gap-3 transition-[height] duration-300 lg:h-20 lg:group-data-[scrolled=true]/header:h-16">
           <Link href="/" aria-label={`${site.name} — home`} className="shrink-0">
             <Logo />
           </Link>
@@ -77,7 +77,9 @@ export function Header() {
                 Emergency<span className="hidden sm:inline"> Line</span>
               </span>
             </ButtonLink>
-            {/* Wrapper does the hiding: `hidden` on the button itself would fight its own `inline-flex`. */}
+            {/* Hidden for now (the /book-appointment page still exists). To restore, uncomment this block
+                and the CalendarCheck import above. The wrapper div does the hiding because `hidden` on
+                the button itself would fight its own `inline-flex`.
             <div className="hidden xl:block">
               <ButtonLink
                 href="/book-appointment"
@@ -89,6 +91,7 @@ export function Header() {
                 Book an Appointment
               </ButtonLink>
             </div>
+            */}
             <MobileNav items={primaryNav} whatsappHref={whatsapp} />
           </div>
         </Container>

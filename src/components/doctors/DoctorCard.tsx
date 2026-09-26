@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { CalendarCheck, GraduationCap, Languages } from "lucide-react";
+import { GraduationCap, Languages } from "lucide-react"; // + CalendarCheck when the Book button is restored
 import type { Doctor } from "@/content/doctors";
 import { getService } from "@/content/services";
-import { ButtonLink } from "@/components/ui/Button";
+// import { ButtonLink } from "@/components/ui/Button"; // restore with the "Book with …" button
 import { Copy } from "@/components/ui/Copy";
 import { ServiceIcon } from "@/components/ui/Icons";
 import { isPlaceholder } from "@/lib/contact";
@@ -23,8 +23,9 @@ const banners: Record<string, string> = {
 const fallbackBanner = "from-brand-800 to-brand-500";
 
 export function DoctorCard({ doctor }: { doctor: Doctor }) {
-  const params = new URLSearchParams({ department: doctor.department });
-  if (!isPlaceholder(doctor.name)) params.set("doctor", doctor.name);
+  // Booking-link params, used by the hidden "Book with …" button below:
+  // const params = new URLSearchParams({ department: doctor.department });
+  // if (!isPlaceholder(doctor.name)) params.set("doctor", doctor.name);
 
   const service = getService(doctor.department);
 
@@ -119,6 +120,8 @@ export function DoctorCard({ doctor }: { doctor: Doctor }) {
           Consulting: <span className="text-ink">{doctor.days}</span>
         </p>
 
+        {/* "Book with Dr …" button hidden for now. To restore, uncomment this, the `params` lines above,
+            and the CalendarCheck + ButtonLink imports.
         <ButtonLink
           href={`/book-appointment?${params.toString()}`}
           variant="outline"
@@ -130,6 +133,7 @@ export function DoctorCard({ doctor }: { doctor: Doctor }) {
             Book with <Copy>{doctor.name}</Copy>
           </span>
         </ButtonLink>
+        */}
       </div>
     </article>
   );

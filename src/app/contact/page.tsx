@@ -1,6 +1,6 @@
 import { Clock, Mail, MapPin, Navigation, Phone, Siren } from "lucide-react";
 import { site } from "@/content/site";
-import { ContactForm } from "@/components/forms/ContactForm";
+// import { ContactForm } from "@/components/forms/ContactForm"; // restore with the "Send us a message" block below
 import { ButtonLink } from "@/components/ui/Button";
 import { Copy } from "@/components/ui/Copy";
 import { WhatsAppIcon } from "@/components/ui/Icons";
@@ -48,7 +48,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="We’re here to help"
         title="Contact Living Hope Hospital"
-        description="Reach out anytime — by phone, WhatsApp, email, or the form below. For emergencies, always call our emergency line."
+        description="Reach out anytime — by phone, WhatsApp or email. For emergencies, always call our emergency line."
         breadcrumbs={[{ name: "Contact Us", path: "/contact" }]}
       >
         <ButtonLink href={telHref(c.emergencyPhone)} variant="emergency" size="lg">
@@ -101,26 +101,50 @@ export default function ContactPage() {
                 </span>
               </Row>
             </ul>
-
-            <div className="mt-10 rounded-3xl border border-line bg-mist p-6">
-              <h3 className="flex items-center gap-2 text-xl font-semibold text-brand-900">
-                <Navigation className="h-5 w-5 text-brand-600" aria-hidden="true" />
-                Directions
-              </h3>
-              <p className="mt-3 leading-relaxed text-ink/90">
-                Living Hope Hospital is located in Parakin, Ile-Ife —{" "}
-                <Copy>
-                  [Insert clear directions from OAU main gate, naming the road and a notable local
-                  landmark]
-                </Copy>
-                .
-              </p>
-              <ButtonLink href={site.map.directionsUrl} variant="outline" size="sm" className="mt-4">
-                Open in Google Maps
-              </ButtonLink>
-            </div>
           </div>
 
+          {/* Directions takes the second column while the message form is hidden (see below). */}
+          <div className="self-start rounded-3xl border border-line bg-mist p-6 sm:p-8">
+            <h3 className="flex items-center gap-2 text-xl font-semibold text-brand-900">
+              <Navigation className="h-5 w-5 text-brand-600" aria-hidden="true" />
+              Directions
+            </h3>
+            
+            <p className="mt-3 leading-relaxed text-ink/90">
+              We’re in the Parakin area of Ile-Ife — in the Obalufe Layout (Eleyele, Ife Central), on
+              Living Hope Hospital Road.
+            </p>
+            <p className="mt-3 leading-relaxed text-ink/90">
+              Parakin sits on the Ede Road, the same road as the OAU campus gate, so we’re a short
+              trip from the OAU community and the rest of Ile-Ife.
+            </p>
+            <ul className="mt-4 space-y-2 text-sm text-ink/90">
+              <li className="flex gap-2">
+                <span className="font-semibold text-brand-800">Area:</span>
+                Parakin, Obalufe Layout (Eleyele)
+              </li>
+              <li className="flex gap-2">
+                <span className="font-semibold text-brand-800">Road:</span>
+                Living Hope Hospital Road
+              </li>
+              <li className="flex gap-2">
+                <span className="font-semibold text-brand-800">Look for:</span>
+                Parakin Junction, on the Ede Road
+              </li>
+            </ul>
+            <p className="mt-4 text-sm text-muted">
+              For live turn-by-turn directions from wherever you are, open the map — or call us and
+              we’ll guide you in.
+            </p>
+            <ButtonLink href={site.map.directionsUrl} variant="outline" size="sm" className="mt-4">
+              Open in Google Maps
+            </ButtonLink>
+          </div>
+
+          {/* "Send us a message" form — hidden for now (the ContactForm component and the /api/enquiry
+              route still exist). To restore: uncomment this block and the ContactForm import at the top,
+              restore the intro text mentioning "the form below", and move the Directions card back
+              under the contact list.
           <div className="rounded-3xl border border-line bg-white p-6 shadow-card sm:p-10">
             <h2 className="text-2xl font-semibold text-brand-900 sm:text-3xl">Send us a message</h2>
             <p className="mt-2 text-muted">
@@ -131,6 +155,7 @@ export default function ContactPage() {
               <ContactForm />
             </div>
           </div>
+          */}
         </div>
       </Section>
 

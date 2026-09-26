@@ -72,4 +72,6 @@ Mosquitoes breed in stagnant water, so prevention starts at home:
 
 ## When to see a doctor
 
-Get tested within 24 hours of a fever starting — sooner for babies, small children and pregnant women. Don’t wait for it to “pass” or self-medicate. You can [book an appointment](/book-appointment) or visit our [general and family medicine](/services/general-family-medicine) team.
+Get tested within 24 hours of a fever starting — sooner for babies, small children and pregnant women. Don’t wait for it to “pass” or self-medicate. You can visit our [general and family medicine](/services/general-family-medicine) team.
+
+<!-- Booking is hidden for now. Original sentence, to restore: Get tested within 24 hours of a fever starting — sooner for babies, small children and pregnant women. Don’t wait for it to “pass” or self-medicate. You can [book an appointment](/book-appointment) or visit our [general and family medicine](/services/general-family-medicine) team. -->

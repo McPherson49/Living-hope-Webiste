@@ -90,7 +90,8 @@ export const services: Service[] = [
     icon: "maternity",
     metaTitle: "Maternity Hospital in Ile-Ife | Living Hope Hospital",
     metaDescription:
-      "Safe pregnancy, delivery, and women’s health care in Parakin, Ile-Ife. Book antenatal and gynaecology appointments at Living Hope Hospital.",
+      // Was "… Book antenatal and gynaecology appointments at Living Hope Hospital." — booking is hidden for now.
+      "Safe pregnancy, delivery, and women’s health care in Parakin, Ile-Ife. Antenatal and gynaecology care at Living Hope Hospital.",
     h1: "Maternity & Gynaecology Care in Ile-Ife",
     summary:
       "Antenatal care, safe delivery, postnatal follow-up and women’s health, with privacy and warmth.",
@@ -191,7 +192,7 @@ export const services: Service[] = [
       {
         question: "Can I walk in without an appointment?",
         answer:
-          "Yes, walk-ins are welcome for general consultations. Calling ahead or booking online usually means a shorter wait, and specialist clinics are best booked in advance.",
+          "Yes, walk-ins are welcome for general consultations. Calling ahead usually means a shorter wait, and specialist clinics are best arranged in advance.",
       },
       {
         question:

@@ -65,4 +65,6 @@ Don’t wait it out if:
 - someone has difficulty breathing;
 - a wound is getting worse.
 
-Our [general and family medicine](/services/general-family-medicine) team is here to help, and you can [book an appointment](/book-appointment) at any time. In an emergency, call our emergency line.
+Our [general and family medicine](/services/general-family-medicine) team is here to help. In an emergency, call our emergency line.
+
+<!-- Booking is hidden for now. Original sentence, to restore: Our [general and family medicine](/services/general-family-medicine) team is here to help, and you can [book an appointment](/book-appointment) at any time. In an emergency, call our emergency line. -->

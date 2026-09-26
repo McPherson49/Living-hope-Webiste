@@ -1,4 +1,4 @@
-import { CalendarCheck, Check, FileText, Phone, ShieldPlus } from "lucide-react";
+import { Check, FileText, Phone, ShieldPlus } from "lucide-react"; // + CalendarCheck when the Book button is restored
 import { patientInfo } from "@/content/patient-info";
 import { site } from "@/content/site";
 import { ButtonLink } from "@/components/ui/Button";
@@ -93,10 +93,12 @@ export default function InsurancePage() {
               <WhatsAppIcon className="h-5 w-5" />
               WhatsApp us
             </ButtonLink>
+            {/* "Book an Appointment" hidden for now. To restore, uncomment this and the CalendarCheck import.
             <ButtonLink href="/book-appointment" variant="outlineLight" size="lg">
               <CalendarCheck className="h-5 w-5" aria-hidden="true" />
               Book an Appointment
             </ButtonLink>
+            */}
           </div>
         </div>
       </Section>

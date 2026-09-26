@@ -1,4 +1,4 @@
-import { CalendarCheck, Check, Clock, MapPin, Phone, Siren } from "lucide-react";
+import { Check, Clock, MapPin, Phone, Siren } from "lucide-react"; // + CalendarCheck when the Book button is restored
 import { homeContent } from "@/content/home";
 import { services } from "@/content/services";
 import { site } from "@/content/site";
@@ -14,7 +14,8 @@ import { stagger } from "@/lib/utils";
 const trustPoints = [
   "Minutes from OAU and central Ile-Ife",
   "Fast emergency response",
-  "Book by phone, WhatsApp or online",
+  // Was "Book by phone, WhatsApp or online" — online booking is hidden for now.
+  "Reach us by phone or WhatsApp",
 ];
 
 function QuickRow({
@@ -94,11 +95,14 @@ export function Hero() {
           </p>
 
           <div className="rise mt-8 flex flex-wrap gap-3" style={stagger(4)}>
+            {/* "Book an Appointment" hidden for now — the Call button below is the primary action meanwhile
+                (was variant="outline"). To restore, uncomment this and set the Call button back to "outline".
             <ButtonLink href="/book-appointment" variant="primary" size="lg">
               <CalendarCheck className="h-5 w-5" aria-hidden="true" />
               Book an Appointment
             </ButtonLink>
-            <ButtonLink href={telHref(c.phone)} variant="outline" size="lg">
+            */}
+            <ButtonLink href={telHref(c.phone)} variant="primary" size="lg">
               <Phone className="h-5 w-5" aria-hidden="true" />
               <span>
                 Call <Copy>{c.phone}</Copy> Now
@@ -202,7 +206,7 @@ export function Hero() {
             </li>
             <li className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-brand-400" aria-hidden="true" />
-              Book by phone, WhatsApp or online
+              Reach us by phone or WhatsApp
             </li>
           </ul>
         </Container>

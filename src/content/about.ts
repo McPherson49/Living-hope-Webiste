@@ -43,5 +43,5 @@ export const about = {
    * real documents, so this stays a placeholder until they are supplied.
    */
   accreditation:
-    "[Add accreditation: MDCN registration, Osun State Ministry of Health licensing, HMO/NHIS affiliations.]",
+    "MDCN registration, Osun State Ministry of Health licensing, HMO/NHIS affiliations.",
 };

@@ -1,7 +1,7 @@
 import { homeContent } from "@/content/home";
 import { GrowLine } from "@/components/motion/GrowLine";
 import { Stagger, StaggerItem } from "@/components/motion/Reveal";
-import { ButtonLink } from "@/components/ui/Button";
+// import { ButtonLink } from "@/components/ui/Button"; // restore with the "Book your visit" button below
 import { Section, SectionHeading } from "@/components/ui/Section";
 
 /** "What to expect during a visit" — four steps joined by a line that draws itself as you scroll to it. */
@@ -39,11 +39,13 @@ export function VisitSteps() {
         </Stagger>
       </div>
 
+      {/* "Book your visit" button hidden for now. To restore, uncomment this and the ButtonLink import.
       <div className="mt-12 text-center">
         <ButtonLink href="/book-appointment" variant="primary" size="lg">
           Book your visit
         </ButtonLink>
       </div>
+      */}
     </Section>
   );
 }

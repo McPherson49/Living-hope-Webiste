@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, CalendarCheck, LayoutGrid, Siren, Stethoscope, type LucideIcon } from "lucide-react";
+import { ArrowUpRight, LayoutGrid, Siren, Stethoscope, type LucideIcon } from "lucide-react"; // + CalendarCheck when the Book card is restored
 import { services } from "@/content/services";
 import { site } from "@/content/site";
 import { Stagger, StaggerItem } from "@/components/motion/Reveal";
@@ -19,12 +19,14 @@ type Action = {
 /** Four quiet, flat cards — quick doors into the site. No overlap, no gradients: just clear links. */
 export function QuickActions() {
   const actions: Action[] = [
-    {
-      href: "/book-appointment",
-      icon: CalendarCheck,
-      title: "Book an appointment",
-      text: "Pick a department and a time that suits you.",
-    },
+    // "Book an appointment" card hidden for now. To restore, uncomment it and set the grid below
+    // back to `lg:grid-cols-4`.
+    // {
+    //   href: "/book-appointment",
+    //   icon: CalendarCheck,
+    //   title: "Book an appointment",
+    //   text: "Pick a department and a time that suits you.",
+    // },
     {
       href: "/doctors",
       icon: Stethoscope,
@@ -53,7 +55,7 @@ export function QuickActions() {
   return (
     <section aria-label="Quick actions" className="border-b border-line bg-mist">
       <Container>
-        <Stagger as="ul" className="grid gap-4 py-10 sm:grid-cols-2 lg:grid-cols-4" stagger={0.08}>
+        <Stagger as="ul" className="grid gap-4 py-10 sm:grid-cols-2 lg:grid-cols-3" stagger={0.08}>
           {actions.map(({ href, icon: Icon, title, text, emergency }) => {
             const card = (
               <>

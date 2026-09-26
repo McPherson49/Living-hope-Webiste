@@ -1,8 +1,8 @@
-import { CalendarCheck } from "lucide-react";
+// import { CalendarCheck } from "lucide-react"; // restore with the Book button
 import { doctors } from "@/content/doctors";
 import { getService } from "@/content/services";
 import { DoctorsExplorer } from "@/components/doctors/DoctorsExplorer";
-import { ButtonLink } from "@/components/ui/Button";
+// import { ButtonLink } from "@/components/ui/Button"; // restore with the Book button
 import { EmergencyBand } from "@/components/ui/EmergencyBand";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { PageHero } from "@/components/ui/PageHero";
@@ -34,10 +34,12 @@ export default function DoctorsPage() {
         description="Behind every successful treatment at Living Hope Hospital is a team of dedicated, experienced medical professionals. Our doctors combine strong clinical training with a patient-first approach — taking the time to listen, explain, and involve you in your own care."
         breadcrumbs={[{ name: "Our Doctors", path: "/doctors" }]}
       >
+        {/* "Book an Appointment" hidden for now. To restore, uncomment this and the two imports above.
         <ButtonLink href="/book-appointment" variant="primary" size="lg">
           <CalendarCheck className="h-5 w-5" aria-hidden="true" />
           Book an Appointment
         </ButtonLink>
+        */}
       </PageHero>
 
       <Section tone="mist">

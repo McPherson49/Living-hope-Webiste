@@ -3,8 +3,10 @@ import { services } from "./services";
 export type NavChild = { label: string; href: string };
 export type NavItem = { label: string; href: string; children?: NavChild[] };
 
+/** Used by the header's "Patient Info" dropdown and the footer's "Patient information" column. */
 export const patientInfoLinks: NavChild[] = [
-  { label: "Book an Appointment", href: "/book-appointment" },
+  // Hidden site-wide for now — the /book-appointment page file still exists but nothing links to it.
+  // { label: "Book an Appointment", href: "/book-appointment" },
   { label: "Insurance & HMO", href: "/insurance-hmo" },
   { label: "Visiting Hours & Admission Guide", href: "/visiting-hours" },
   { label: "FAQs", href: "/faqs" },
@@ -24,14 +26,17 @@ export const serviceLinks: NavChild[] = services.map((s) => ({
 /** Header navigation. The logo is the "Home" link on desktop. */
 export const primaryNav: NavItem[] = [
   { label: "About", href: "/about", children: aboutLinks },
-  { label: "Doctors", href: "/doctors" },
+  // Hidden from the header for now — the /doctors page still exists and is linked from the footer and homepage.
+  // { label: "Doctors", href: "/doctors" },
   { label: "Services", href: "/services", children: serviceLinks },
   {
     label: "Patient Info",
-    href: "/book-appointment",
+    // Was "/book-appointment"; points at the first remaining link while booking is hidden.
+    href: "/insurance-hmo",
     children: patientInfoLinks,
   },
-  { label: "Health Blog", href: "/blog" },
+  // Hidden from the header for now — the /blog pages still exist and are linked from the footer and homepage.
+  // { label: "Health Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 

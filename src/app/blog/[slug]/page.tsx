@@ -6,7 +6,7 @@ import { getService } from "@/content/services";
 import { site } from "@/content/site";
 import { Markdown } from "@/components/blog/Markdown";
 import { PostCard } from "@/components/blog/PostCard";
-import { BookCard } from "@/components/ui/BookCard";
+// import { BookCard } from "@/components/ui/BookCard"; // restore with the "Book an appointment" panel
 import { Container } from "@/components/ui/Container";
 import { EmergencyBand } from "@/components/ui/EmergencyBand";
 import { ServiceIcon } from "@/components/ui/Icons";
@@ -121,10 +121,12 @@ export default async function BlogPostPage({ params }: PageProps<"/blog/[slug]">
               </span>
             </Link>
           )}
+          {/* "Book an appointment" panel hidden for now. To restore, uncomment this and the BookCard import.
           <BookCard
             department={service?.slug}
             message="Hello Living Hope Hospital, I read your article and would like to book an appointment."
           />
+          */}
         </aside>
       </Container>
 
